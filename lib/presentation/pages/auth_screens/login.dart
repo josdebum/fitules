@@ -42,12 +42,12 @@ class LoginScreenState extends State<LoginScreen> {
                     fit: FlexFit.tight,
                     child:   Container( color: kBlack, height: 1)),
                 const  Padding(padding: EdgeInsets.symmetric(horizontal:10), child:
-                Text("or sign in with")).addHeight(60.h),
+                Text("or sign in with")),
                 Flexible(
                     flex: 1,
                     fit: FlexFit.tight,
                     child:   Container(color: kBlack, height: 1)),
-              ])),
+              ])).addHeight(60.h),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[SvgPicture.asset("assets/svgs/google_icon.svg"),
@@ -56,7 +56,7 @@ class LoginScreenState extends State<LoginScreen> {
 
               Row( mainAxisAlignment: MainAxisAlignment.center,
                   children:  const  <Widget>[Text("Don’t have an account? "),
-                    Text("SIGN UP")
+                    Text("SIGN UP", style: TextStyle(color: kPrimary),)
 
                   ])
             ])

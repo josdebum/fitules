@@ -1,6 +1,7 @@
 import 'package:fitules/core/constants/color_constants.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
+import 'package:fitules/presentation/pages/auth_screens/signup2.dart';
 import 'package:fitules/presentation/widgets/app_textfield.dart';
 import 'package:fitules/presentation/widgets/appbar.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
@@ -47,6 +48,9 @@ class SignUpScreenState extends State<SignUpScreen> {
                   buttonColor: kPrimary,
                   textColor: kWhite,
                   height: 50.h,
+                  onTap: (){Navigator.push(
+                      context, MaterialPageRoute(builder: (context) =>
+                  const SignUp2Screen()));},
                   hasBorder: false).addHeight(40.h),
               Padding(padding:
               const EdgeInsets.symmetric(horizontal: 4), child:
@@ -57,12 +61,12 @@ class SignUpScreenState extends State<SignUpScreen> {
                     child: Container(color: kBlack, height: 1)),
                 const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10), child:
-                Text("or sign in with")).addHeight(60.h),
+                Text("or sign in with")),
                 Flexible(
                     flex: 1,
                     fit: FlexFit.tight,
                     child: Container(color: kBlack, height: 1)),
-              ])),
+              ])).addHeight(60.h),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -73,7 +77,7 @@ class SignUpScreenState extends State<SignUpScreen> {
 
               Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: const <Widget>[Text("Already have an account? "),
-                    Text("SIGN IN")
+                    Text("SIGN IN", style: TextStyle(color: kPrimary),)
 
                   ])
             ])

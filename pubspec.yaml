@@ -39,6 +39,8 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   google_fonts: ^3.0.1
   flutter_svg: ^1.1.1+1
+  timelines: ^0.1.0
+  syncfusion_flutter_sliders: ^20.4.53
 
 dev_dependencies:
   flutter_test:
