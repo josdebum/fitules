@@ -27,7 +27,7 @@ class SignUp2ScreenState extends State<SignUp2Screen> {
     {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) =>
-      const NavigationWidget()));
+       NavigationWidget()));
 
       }
     else{

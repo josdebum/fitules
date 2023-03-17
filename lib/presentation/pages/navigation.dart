@@ -9,9 +9,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 
 class NavigationWidget extends StatefulWidget {
-  final int loadedTab;
+ int? loadedTab;
 
-  const NavigationWidget({Key? key, this.loadedTab = 0}) : super(key: key);
+   NavigationWidget({Key? key, this.loadedTab = 0}) : super(key: key);
 
   @override
   State<NavigationWidget> createState() => _NavigationWidgetState();
@@ -34,7 +34,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           setState(() {
-          //  widget.loadedTab = index;
+           widget.loadedTab = index;
           });
         },
         currentIndex: widget.loadedTab ?? 0,
