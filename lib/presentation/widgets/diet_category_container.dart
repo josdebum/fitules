@@ -21,7 +21,7 @@ class DietCategoryContainer extends StatelessWidget {
           ),
           height: 260.h,
           width: 180.w,
-          child: Image.asset("assets/pngs/workout_1.png", fit: BoxFit.fill,
+          child: Image.asset(image, fit: BoxFit.fill,
             height: 260.h,
             width: 180.w,)),
       Positioned(

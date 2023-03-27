@@ -1,9 +1,11 @@
 
 import 'package:fitules/core/constants/color_constants.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
+import 'package:fitules/presentation/pages/nutrient/diet_categories.dart';
 import 'package:fitules/presentation/widgets/daily_nutrient_container.dart';
 import 'package:fitules/presentation/widgets/diet_category_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class NutrientScreen extends StatefulWidget {
   const  NutrientScreen({super.key});
@@ -34,19 +36,32 @@ class NutrientScreenState extends State<NutrientScreen> {
               scrollDirection: Axis.horizontal,
               child: Row(
                   children: <Widget>[
-                    DailyNutrientContainer(title: "BREAKFAST", subTitle: "Plantain and egg", image: "", onTap: (){})
+                    DailyNutrientContainer(title: "BREAKFAST", subTitle: "Plantain and egg", image: "assets/pngs/food_1.png", onTap: (){})
                         .paddingRight(12),
-                    DailyNutrientContainer(title: "BREAKFAST", subTitle: "Plantain and egg", image: "", onTap: (){}).paddingRight(12),
-                    DailyNutrientContainer(title: "BREAKFAST", subTitle: "Plantain and egg", image: "", onTap: (){})
+                    DailyNutrientContainer(title: "BREAKFAST", subTitle: "Plantain and egg", image: "assets/pngs/food_1.png", onTap: (){}).paddingRight(12),
+                    DailyNutrientContainer(title: "BREAKFAST", subTitle: "Plantain and egg", image: "assets/pngs/food_1.png", onTap: (){})
 
                   ])).addHeight(50),
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[const Text("Diet Categries"), GestureDetector(
-                  onTap: (){},
+                  onTap: (){Navigator.push(
+                      context, MaterialPageRoute(builder: (context) =>
+                  const DietCategoriesScreen()));},
                   child:const Text("See all"))]).addHeight(28),
 
-          DietCategoryContainer(title: "VEGETARIAN DIET", subTitle: "15 days plan", image: "", onTap: (){})
+    MasonryGridView.count(
+    shrinkWrap: true,
+    //controller: _scrollController,
+    itemCount: 4,
+    crossAxisCount: 2,
+    mainAxisSpacing: 10,
+    crossAxisSpacing: 15,
+    itemBuilder: (context, index) {
+
+    return
+
+          DietCategoryContainer(title: "VEGETARIAN DIET", subTitle: "15 days plan", image: "assets/pngs/food_2.png", onTap: (){});})
 
 
 
