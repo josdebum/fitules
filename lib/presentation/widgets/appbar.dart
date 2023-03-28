@@ -1,4 +1,5 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -28,7 +29,7 @@ class FituleAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) : super(key: key);
 
   @override
-  Size get preferredSize => const Size.fromHeight(70);
+  Size get preferredSize => Size.fromHeight(66.h);
 
   @override
   Widget build(BuildContext context) {

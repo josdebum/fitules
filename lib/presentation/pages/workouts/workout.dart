@@ -1,6 +1,7 @@
 import 'package:fitules/core/constants/color_constants.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
+import 'package:fitules/presentation/pages/workouts/selected_workout.dart';
 import 'package:fitules/presentation/widgets/workout_challenge_container.dart';
 import 'package:fitules/presentation/widgets/workout_container.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,11 @@ class WorkoutScreenState extends State<WorkoutScreen> {
           child: SingleChildScrollView(scrollDirection: Axis.vertical,
           child: Column(
               children: <Widget>[
-                WorkoutsContainer(text: "Squat Workout",image: "assets/pngs/sqaut.png", onTap: (){}),
+                WorkoutsContainer(text: "Squat Workout",
+                    image: "assets/pngs/sqaut.png",
+                    onTap: (){Navigator.push(
+                        context, MaterialPageRoute(builder: (context) =>
+                    const SelectedWorkoutScreen()));}),
                 Container(width: 280.w, height: 1, color: kGrey),
                 WorkoutsContainer(text: "Plank Workout",image: "assets/pngs/plank.png", onTap: (){}),
                 Container(width: 280.w, height: 1, color: kGrey),
