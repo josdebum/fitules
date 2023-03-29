@@ -3,6 +3,7 @@ import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
 import 'package:fitules/presentation/widgets/workout_container.dart';
+import 'package:fitules/presentation/widgets/workout_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -129,9 +130,19 @@ class SelectedWorkoutDetailsScreenState
             height: 80,
             padding: const EdgeInsets.fromLTRB(16, 16, 18, 16),
             color: kPrimary,
-            child: const AppButton(
+            child: AppButton(
                 text: "Start Workout",
                 height: 40,
+                onTap: () {
+                  showDialog(
+                    barrierColor: Colors.white.withOpacity(0),
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return WorkoutDialog(text: "", image: "", onTap: () {});
+                    },
+                  );
+                },
                 buttonColor: kWhite,
                 textColor: kPrimary,
                 hasBorder: false)),

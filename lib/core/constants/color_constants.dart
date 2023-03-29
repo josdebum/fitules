@@ -8,3 +8,4 @@ const Color kWhite = Color(0xFFFFFFFF);
 const Color kLightGreen = Color(0xFFEDFCF6);
 const Color kGrey = Color(0xFFD0D0D0);
 const Color kGrey2 = Color(0xFF616361);
+const Color kGrey3 = Color(0xFFFAF8F4);
