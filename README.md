@@ -1,16 +1,17 @@
-# fitules
+# Fitules
 
-A fitness flutter app.
+A fitness app that contains workout samples, diet recommendation and community of Fitfam around you.
 
-## Getting Started
+## DESIGN
+Design Implementation from <a href="https://www.figma.com/file/ybbK8hHQlOdi9ZicytCPEh/FITULES?node-id=9-9445&t=4dCJc2KxgJmrZ1ie-0">
 
-This project is a starting point for a Flutter application.
+### Technical features
+- Flutter (Dart)
+- Material Design
+- CI/CD git action and code magic
+- Flutter Testing(widget and unit)
+- MVVM file structure
+- Provider state management
+- Responsive UI, etc.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
