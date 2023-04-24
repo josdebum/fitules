@@ -1,11 +1,14 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/size_config/size_config.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/pages/auth_screens/login.dart';
 import 'package:fitules/presentation/pages/get_started/onboarding_item.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreens extends StatefulWidget {
@@ -35,7 +38,7 @@ class OnboardingScreenState extends State<OnboardingScreens> {
   Widget build(BuildContext context) {
     SizeConfig.init(context);
     return Scaffold(
-      backgroundColor: kLightGreen,
+
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         height: MediaQuery.of(context).size.height,
@@ -55,6 +58,18 @@ class OnboardingScreenState extends State<OnboardingScreens> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                  SizedBox(height: 20.h),
+                  CupertinoSwitch(
+                    key: const Key("themeSwitch"),
+                    value: Provider.of<ThemeNotifier>(context).darkTheme,
+                    // activeColor: kDarkGrey,
+                    activeColor: Provider.of<ThemeNotifier>(context).darkTheme
+                        ? kPrimary
+                        : kWhite,
+                    onChanged: (bool value) {
+                      Provider.of<ThemeNotifier>(context, listen: false)
+                          .toggleTheme();
+                    },
+                  ).scale(scale: 0.8, alignment: const Alignment(0.0, 0.0)),
                      Image.asset(
                               onBoard.onBoardingProvContents[currentIndex]
                                   .imgString,
@@ -62,10 +77,7 @@ class OnboardingScreenState extends State<OnboardingScreens> {
                         Text(
                           onBoard.onBoardingProvContents[currentIndex].title,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
-                              color: kBlack,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
+                          style:Theme.of(context).textTheme.titleLarge,
                         ).addHeight(20.h),
 
                         Padding(
@@ -75,10 +87,8 @@ class OnboardingScreenState extends State<OnboardingScreens> {
                                 onBoard
                                     .onBoardingProvContents[currentIndex].description,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    fontSize: 14.5,
-                                    fontWeight: FontWeight.w400,
-                                    color: kBlack))).addHeight(100.h),
+                                style: Theme.of(context).textTheme.titleMedium)),
+
 
 
                   Center(

@@ -18,7 +18,7 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: kLightGreen,
+
         appBar: FituleAppBar(title: 'Sign In',),
         body: Padding(
             padding:   EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),

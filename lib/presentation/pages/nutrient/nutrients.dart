@@ -17,8 +17,6 @@ class NutrientScreenState extends State<NutrientScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kLightGreen,
-        // appBar: FituleAppBar(title: 'Sign In',),
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Padding(

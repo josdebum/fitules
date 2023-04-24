@@ -33,7 +33,7 @@ class NutrientInfoScreenState extends State<NutrientInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kLightGreen,
+
       body: SingleChildScrollView(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
               Widget>[

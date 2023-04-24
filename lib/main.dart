@@ -1,6 +1,11 @@
+import 'package:fitules/core/provider.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/presentation/pages/get_started/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'color_scheme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,15 +17,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: GoogleFonts.poppins().fontFamily,
+    return  MultiProvider(
+        providers: repositoryProviders,
+        child:Consumer<ThemeNotifier>(
+        builder: (context, themeNotifier, child) {
+          return MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
+        darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+        themeMode:   themeNotifier.darkTheme
+              ? ThemeMode.dark
+              : ThemeMode.light,
+        home: const SplashScreen(),
+      );
+    }));}
 
-      ),
-      home: const SplashScreen(),
-    );
-  }
 }
 

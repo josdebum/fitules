@@ -60,6 +60,7 @@ class AppTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return   Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -101,7 +102,7 @@ class AppTextField extends StatelessWidget {
             borderSide: const BorderSide(width: 1, color: kPrimary),
           ),
           isDense: true,
-          fillColor: kWhite,
+          fillColor: isDarkMode ? kFillBlack: kWhite,
           filled: true,
           contentPadding: EdgeInsets.all(
             hasBorder

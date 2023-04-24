@@ -12,8 +12,7 @@ class ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: kLightGreen,
-        // appBar: FituleAppBar(title: 'Sign In',),
+
         body:  Container()
     );
   }

@@ -25,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     SizeConfig.init(context);
     return Scaffold(
       backgroundColor: kPrimary,
@@ -32,6 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
         child:
           Image.asset(
+            isDarkMode? "assets/pngs/splash_2.png":
            "assets/pngs/splash.png",
             width: 240,
             height: 70,

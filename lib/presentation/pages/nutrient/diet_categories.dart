@@ -17,7 +17,7 @@ class DietCategoriesScreenState extends State<DietCategoriesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kLightGreen,
+
         appBar: FituleAppBar(
           title: 'Diet Categories',
           automaticallyImplyLeading: false,

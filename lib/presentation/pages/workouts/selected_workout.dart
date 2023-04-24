@@ -17,7 +17,6 @@ class SelectedWorkoutScreenState extends State<SelectedWorkoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kLightGreen,
       appBar: FituleAppBar(
         title: 'Squat Workout',
         hasBackgroundColor: true,

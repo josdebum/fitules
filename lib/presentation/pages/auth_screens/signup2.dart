@@ -39,7 +39,7 @@ class SignUp2ScreenState extends State<SignUp2Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kLightGreen,
+
         appBar: FituleAppBar(
           title: 'Sign Up',
         ),

@@ -16,8 +16,6 @@ class WorkoutScreenState extends State<WorkoutScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: kLightGreen,
-        // appBar: FituleAppBar(title: 'Sign In',),
         body:  SafeArea(child:SingleChildScrollView(
     child: Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

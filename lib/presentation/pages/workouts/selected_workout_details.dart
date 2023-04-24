@@ -22,7 +22,8 @@ class SelectedWorkoutDetailsScreenState
     return Scaffold(
         body: Stack(children: <Widget>[
       const Scaffold(
-          backgroundColor: kLightGreen, body: SingleChildScrollView()),
+
+          body: SingleChildScrollView()),
       Positioned(
           top: 0,
           left: 0,

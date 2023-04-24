@@ -35,8 +35,7 @@ class CommunityScreenState extends State<CommunityScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kLightGreen,
-        // appBar: FituleAppBar(title: 'Sign In',),
+
         body: SafeArea(
             child: Padding(
                 padding:

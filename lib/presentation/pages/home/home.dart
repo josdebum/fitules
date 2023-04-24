@@ -15,7 +15,6 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: kLightGreen,
         body:  SafeArea(child:SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
