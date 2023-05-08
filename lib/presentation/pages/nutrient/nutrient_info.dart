@@ -1,9 +1,11 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class NutrientInfoScreen extends StatefulWidget {
   String? title;
@@ -33,7 +35,9 @@ class NutrientInfoScreenState extends State<NutrientInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+          ? backgroundBlack
+          : backgroundColor,
       body: SingleChildScrollView(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
               Widget>[
@@ -65,30 +69,31 @@ class NutrientInfoScreenState extends State<NutrientInfoScreen> {
                   Align(
                       alignment: Alignment.topLeft,
                       child: Container(
-                          height: 48.h,
+                         // height: 50.h,
                           width: 160.w,
-                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                          decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
+                          padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                          decoration:  BoxDecoration(
+                              borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(24),
                                   bottomRight: Radius.circular(24),
                                   topLeft: Radius.circular(0),
                                   bottomLeft: Radius.circular(0)),
-                              color: kWhite),
+                              color: Provider.of<ThemeNotifier>(context).darkTheme
+                                  ? kBlack: kWhite),
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const <Widget>[
+                              children: <Widget>[
                                 Text("VEGAN DIET",
                                     style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.w600,
-                                        color: kBlack)),
+                                        )),
                                 Text("30 days plan",
                                     style: TextStyle(
-                                        fontSize: 11,
+                                        fontSize: 11.sp,
                                         fontWeight: FontWeight.w400,
-                                        color: kBlack))
+                                        ))
                               ]))),
                 ])),
         Padding(
@@ -134,7 +139,7 @@ class NutrientInfoScreenState extends State<NutrientInfoScreen> {
                       "needed with salt pepper. Allow to cook on medium heat for 3 "
                       "minutes then add kale and tofu. Cook for 4-5 minutes or until the kale is tender"
                       "then serve over rice.")
-                ]))
+                ])).addHeight(50.h)
       ])),
       floatingActionButton: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 0),

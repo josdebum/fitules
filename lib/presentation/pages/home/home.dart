@@ -1,9 +1,11 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/widgets/daily_plan_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const  HomeScreen({super.key});
@@ -15,24 +17,27 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+          ? backgroundBlack
+          : backgroundColor,
         body:  SafeArea(child:SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(children: <Widget>[
            const Align(
              alignment: Alignment.topLeft,
-             child: Text("Hi,Glow Toks",
+             child: Text("Hi, Glow Toks",
                 style: TextStyle(
                 fontSize: 18.12,
 
                 fontWeight: FontWeight.w500,
-                color: kBlack)),),
+                )),),
               const Align(
                   alignment: Alignment.topLeft,
                   child:  Text("Level: Beginner", style: TextStyle(
                 fontSize: 18.12,
                 fontWeight: FontWeight.w500,
-                color: kBlack)),).addHeight(20),
+               )),).addHeight(20),
 
             Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 14.h),
@@ -81,7 +86,7 @@ class HomeScreenState extends State<HomeScreen> {
                   child:    Text("Daily Plan", style: TextStyle(
                 fontSize: 18.12,
                 fontWeight: FontWeight.w500,
-                color: kBlack))).addHeight(13),
+                ))).addHeight(13),
 
             DailyPlanContainer(text: "Today’s Nutrition plan", onTap: (){}).addHeight(20),
             DailyPlanContainer(text: "Today’s Workout Plan", onTap: (){}).addHeight(20),
@@ -91,12 +96,16 @@ class HomeScreenState extends State<HomeScreen> {
                   child:  Text("Weekly Stats", style: TextStyle(
                 fontSize: 18.12,
                 fontWeight: FontWeight.w500,
-                color: kBlack))),
-
+               ))),
+          Provider.of<ThemeNotifier>(context).darkTheme
+              ?  SvgPicture.asset("assets/svgs/chart.svg")
+              :  SvgPicture.asset("assets/svgs/chart_2.svg"),
 
 
 
           ])
+
+
 
         ))
         ) );

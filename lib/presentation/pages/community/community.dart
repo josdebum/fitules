@@ -1,8 +1,10 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/widgets/app_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class CommunityScreen extends StatefulWidget {
   const CommunityScreen({super.key});
@@ -35,7 +37,9 @@ class CommunityScreenState extends State<CommunityScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+        backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+            ? backgroundBlack
+            : backgroundColor,
         body: SafeArea(
             child: Padding(
                 padding:
@@ -57,14 +61,21 @@ class CommunityScreenState extends State<CommunityScreen>
                           padding: const EdgeInsets.fromLTRB(0, 10, 0, 20),
                           child: SizedBox(
                             width: double.infinity,
-                            height: 45,
+                            height: 60,
+
                             child: TabBar(
                               controller: _tabController,
                               tabs: _tabs,
-                              unselectedLabelColor: Colors.black,
+                              unselectedLabelColor: Provider.of<ThemeNotifier>(context).darkTheme
+                                  ? kWhite
+                                  : kBlack,
+                              padding: const EdgeInsets.fromLTRB(10, 14, 10, 14),
+                             // labelPadding: EdgeInsets.all(10),
                               labelColor: kWhite,
+                              indicatorPadding: const EdgeInsets.all(-10),
+                              labelStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                               indicator: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40.0),
+                                borderRadius: BorderRadius.circular(10.0),
                                 color: kPrimary,
                               ),
                             ),
@@ -97,12 +108,12 @@ Widget findFriends() {
               child: const Text(
                 "Add Friend",
                 style: TextStyle(
-                    color: kWhite, fontSize: 10, fontWeight: FontWeight.w500),
+                     fontSize: 10, fontWeight: FontWeight.w500),
               )),
           title: const Text(
             "Chichi91",
             style: TextStyle(
-                color: kBlack, fontSize: 12, fontWeight: FontWeight.w500),
+                fontSize: 12, fontWeight: FontWeight.w500),
           ));
     },
     separatorBuilder: (BuildContext context, int index) {
@@ -131,12 +142,12 @@ Widget chatRoom() {
             subtitle: Text(
               "Congratulations!",
               style: TextStyle(
-                  color: kBlack, fontSize: 11, fontWeight: FontWeight.w400),
+                 fontSize: 11, fontWeight: FontWeight.w400),
             ),
             title: Text(
               "Chichi91",
               style: TextStyle(
-                  color: kBlack, fontSize: 14, fontWeight: FontWeight.w500),
+                   fontSize: 14, fontWeight: FontWeight.w500),
             ));
       },
       separatorBuilder: (BuildContext context, int index) {
@@ -165,12 +176,12 @@ Widget notifications() {
           subtitle: const Text(
             "accepted your friend request 5 hours ago",
             style: TextStyle(
-                color: kBlack, fontSize: 11, fontWeight: FontWeight.w400),
+               fontSize: 11, fontWeight: FontWeight.w400),
           ),
           title: const Text(
             "Chichi91",
             style: TextStyle(
-                color: kBlack, fontSize: 12, fontWeight: FontWeight.w500),
+                 fontSize: 12, fontWeight: FontWeight.w500),
           ));
     },
     separatorBuilder: (BuildContext context, int index) {

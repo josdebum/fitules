@@ -1,10 +1,12 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/pages/workouts/selected_workout_details.dart';
 import 'package:fitules/presentation/widgets/appbar.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class SelectedWorkoutScreen extends StatefulWidget {
   const SelectedWorkoutScreen({super.key});
@@ -17,6 +19,9 @@ class SelectedWorkoutScreenState extends State<SelectedWorkoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+          ? backgroundBlack
+          : backgroundColor,
       appBar: FituleAppBar(
         title: 'Squat Workout',
         hasBackgroundColor: true,

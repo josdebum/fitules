@@ -1,10 +1,13 @@
 
+import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/pages/nutrient/diet_categories.dart';
 import 'package:fitules/presentation/widgets/daily_nutrient_container.dart';
 import 'package:fitules/presentation/widgets/diet_category_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:provider/provider.dart';
 
 class NutrientScreen extends StatefulWidget {
   const NutrientScreen({super.key});
@@ -17,6 +20,9 @@ class NutrientScreenState extends State<NutrientScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+            ? backgroundBlack
+            : backgroundColor,
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Padding(

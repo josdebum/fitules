@@ -1,4 +1,5 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/pages/auth_screens/signup2.dart';
@@ -7,6 +8,7 @@ import 'package:fitules/presentation/widgets/appbar.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -18,8 +20,11 @@ class SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+            ? backgroundBlack
+            : backgroundColor,
         appBar: FituleAppBar(title: 'Sign Up',),
-        body: Padding(
+        body: SingleChildScrollView(child:Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             child: Column(children: <Widget>[
               SizedBox(height: 20.h),
@@ -80,7 +85,7 @@ class SignUpScreenState extends State<SignUpScreen> {
 
                   ])
             ])
-        ));
+        )));
   }
 }
 

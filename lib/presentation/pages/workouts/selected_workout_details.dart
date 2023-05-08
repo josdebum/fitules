@@ -1,4 +1,5 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
@@ -6,6 +7,7 @@ import 'package:fitules/presentation/widgets/workout_container.dart';
 import 'package:fitules/presentation/widgets/workout_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class SelectedWorkoutDetailsScreen extends StatefulWidget {
   const SelectedWorkoutDetailsScreen({super.key});
@@ -21,9 +23,12 @@ class SelectedWorkoutDetailsScreenState
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(children: <Widget>[
-      const Scaffold(
+      Scaffold(
+          backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+              ? backgroundBlack
+              : backgroundColor,
 
-          body: SingleChildScrollView()),
+          body: const SingleChildScrollView()),
       Positioned(
           top: 0,
           left: 0,

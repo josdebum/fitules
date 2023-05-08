@@ -1,7 +1,9 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class FituleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -35,7 +37,9 @@ class FituleAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
 
     return AppBar(
-      backgroundColor: hasBackgroundColor == true ? backgroundColor: kLightGreen,
+      backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+          ? kBlack
+          :hasBackgroundColor == true ? backgroundColor: kLightGreen,
       bottom: bottom,
       elevation: 0,
       actions:[ hasAction ==true ?action! : Container()],
@@ -53,7 +57,7 @@ class FituleAppBar extends StatelessWidget implements PreferredSizeWidget {
             style: hasBackgroundColor == true ? textStyle:const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
-                color: kBlack)
+                )
             )
         ),
 

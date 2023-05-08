@@ -1,10 +1,12 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/presentation/pages/nutrient/nutrient_info.dart';
 import 'package:fitules/presentation/widgets/appbar.dart';
 import 'package:fitules/presentation/widgets/daily_nutrient_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class DietCategoriesScreen extends StatefulWidget {
   const DietCategoriesScreen({super.key});
@@ -17,6 +19,9 @@ class DietCategoriesScreenState extends State<DietCategoriesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+            ? backgroundBlack
+            : backgroundColor,
 
         appBar: FituleAppBar(
           title: 'Diet Categories',

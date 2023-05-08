@@ -43,13 +43,13 @@ class DietCategoryContainer extends StatelessWidget {
               child: Column(mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(title, style: const TextStyle(
-                        fontSize: 14,
+                    Text(title, style:  TextStyle(
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         color: kBlack)),
 
-                    Text(subTitle, style: const TextStyle(
-                        fontSize: 11,
+                    Text(subTitle, style: TextStyle(
+                        fontSize: 11.sp,
                         fontWeight: FontWeight.w400,
                         color: kBlack))
                   ])

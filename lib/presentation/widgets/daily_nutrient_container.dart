@@ -32,7 +32,7 @@ class DailyNutrientContainer extends StatelessWidget {
           left: 0,
           right:  isDietCategory == true? 40 :60,
           child: Container(
-              height: 48.h,
+              height: 50.h,
               width: 160.w,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               decoration:
@@ -46,13 +46,13 @@ class DailyNutrientContainer extends StatelessWidget {
                child: Column(mainAxisAlignment: MainAxisAlignment.start,
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: <Widget>[
-                     Text(title, style: const TextStyle(
-                    fontSize: 14,
+                     Text(title, style:  TextStyle(
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
                     color: kBlack)),
 
-                     Text(subTitle, style: const TextStyle(
-                         fontSize: 11,
+                     Text(subTitle, style:  TextStyle(
+                         fontSize: 11.sp,
                          fontWeight: FontWeight.w400,
                          color: kBlack))
                    ])

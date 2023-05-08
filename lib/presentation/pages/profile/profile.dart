@@ -1,8 +1,11 @@
 import 'package:fitules/core/themes/app_style.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/color_constants.dart';
 
@@ -17,6 +20,9 @@ class ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+            ? backgroundBlack
+            : backgroundColor,
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Padding(
@@ -25,7 +31,22 @@ class ProfileScreenState extends State<ProfileScreen> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          const CircleAvatar(radius: 40).addHeight(4),
+
+                          Align(
+                              alignment: Alignment.topRight,
+                              child:CupertinoSwitch(
+                          key: const Key("themeSwitch"),
+                          value: Provider.of<ThemeNotifier>(context).darkTheme,
+                          // activeColor: kDarkGrey,
+                          activeColor: Provider.of<ThemeNotifier>(context).darkTheme
+                              ? kPrimary
+                              : kWhite,
+                          onChanged: (bool value) {
+                            Provider.of<ThemeNotifier>(context, listen: false)
+                                .toggleTheme();
+                          },
+                        ).scale(scale: 0.8, alignment: const Alignment(0.0, 0.0))),
+                          const CircleAvatar(radius: 40, backgroundColor: kGrey2,).addHeight(4),
                           Text("Glow Toks", style: AppStyle.style1.copyWith(fontSize: 15, fontWeight: FontWeight.w700),),
                           const Text("Level: Beginner").addHeight(15),
                           const AppButton(
@@ -37,11 +58,15 @@ class ProfileScreenState extends State<ProfileScreen> {
                           ).addHeight(15),
                           Card(
                               elevation: 1,
-                              color: kWhite,
+                              color: Provider.of<ThemeNotifier>(context).darkTheme
+                                  ? kBlack
+                                  : kWhite,
                               child: Container(
                                   padding: const EdgeInsets.all(16),
                                   decoration: BoxDecoration(
-                                      color: kWhite,
+                                      color: Provider.of<ThemeNotifier>(context).darkTheme
+                                          ? kBlack
+                                          : kWhite,
                                       borderRadius: BorderRadius.circular(20)),
                                   child: Column(children: <Widget>[
                                     Row(

@@ -24,8 +24,12 @@ class AppTheme {
       primaryColor: primaryColor,
       canvasColor: primaryColor,
       backgroundColor: primaryColor,
-      scaffoldBackgroundColor: kLightGreen,
+      scaffoldBackgroundColor: primaryColor,
+      dividerColor: kGrey4,
+      cardColor: kWhite,
       textTheme: _textTheme(base.textTheme, secondaryColor),
+
+
       appBarTheme: AppBarTheme(
         elevation: 0,
         color: primaryColor,
@@ -56,7 +60,10 @@ class AppTheme {
       canvasColor: primaryColor,
       backgroundColor: primaryColor,
       scaffoldBackgroundColor: primaryColor,
+      dividerColor: kGrey5,
+      cardColor: kBlack,
       textTheme: _textTheme(base.textTheme, secondaryColor),
+
       appBarTheme: AppBarTheme(
         elevation: 0,
         color: primaryColor,

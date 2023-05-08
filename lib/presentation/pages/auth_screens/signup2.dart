@@ -1,4 +1,5 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/pages/navigation.dart';
@@ -8,6 +9,7 @@ import 'package:fitules/presentation/widgets/custom_app_button.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 import 'package:timelines/timelines.dart';
 
 class SignUp2Screen extends StatefulWidget {
@@ -39,14 +41,19 @@ class SignUp2ScreenState extends State<SignUp2Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+        backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+            ? backgroundBlack
+            : backgroundColor,
         appBar: FituleAppBar(
           title: 'Sign Up',
         ),
-        body: Padding(
+        body:  Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-            child: Column(children: <Widget>[
-              Expanded(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+             Center(child: Expanded(
                   child: Container(
                 height: 60.h,
                 alignment: Alignment.topCenter,
@@ -94,7 +101,7 @@ class SignUp2ScreenState extends State<SignUp2Screen> {
                     },
                   ),
                 ),
-              )),
+              ))),
 
               Container(
                 padding:  EdgeInsets.symmetric(horizontal: 20.h, vertical: 0.w),

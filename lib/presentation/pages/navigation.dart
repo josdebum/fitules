@@ -32,6 +32,8 @@ class _NavigationWidgetState extends State<NavigationWidget> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
+
         onTap: (index) {
           setState(() {
            widget.loadedTab = index;

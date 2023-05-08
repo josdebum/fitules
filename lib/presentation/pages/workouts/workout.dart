@@ -1,10 +1,12 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/pages/workouts/selected_workout.dart';
 import 'package:fitules/presentation/widgets/workout_challenge_container.dart';
 import 'package:fitules/presentation/widgets/workout_container.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class WorkoutScreen extends StatefulWidget {
  const  WorkoutScreen({super.key});
@@ -16,6 +18,9 @@ class WorkoutScreenState extends State<WorkoutScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+        backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+            ? backgroundBlack
+            : backgroundColor,
         body:  SafeArea(child:SingleChildScrollView(
     child: Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -36,13 +41,17 @@ class WorkoutScreenState extends State<WorkoutScreen> {
           child:Text("WORKOUTS", style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w600,
-              color: kBlack))).addHeight(20),
+              ))).addHeight(20),
 
-      Container(
+      Card(
+          elevation: 4,
+          child:Container(
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 18.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: kWhite,
+            color:Provider.of<ThemeNotifier>(context).darkTheme
+                ? kBlack
+                : kWhite,
           ),
           child: SingleChildScrollView(scrollDirection: Axis.vertical,
           child: Column(
@@ -59,7 +68,7 @@ class WorkoutScreenState extends State<WorkoutScreen> {
                 Container(width: 280.w, height: 1, color: kGrey),
                 WorkoutsContainer(text: "Strength Workout",image: "assets/pngs/strength.png", onTap: (){})
 
-              ])))
+              ]))))
 
     ]))))
     );

@@ -26,10 +26,10 @@ class DailyPlanContainer extends StatelessWidget {
       Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-        Text(text,  style: const TextStyle(
-            fontSize: 14,
+        Text(text,  style:  TextStyle(
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
-            color: kBlack)),
+            )),
         GestureDetector(
             onTap: onTap,
             child:
@@ -37,8 +37,8 @@ class DailyPlanContainer extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: kPrimary
-            ),child:const  Text("Check", style: TextStyle(
-                fontSize: 12,
+            ),child:  Text("Check", style: TextStyle(
+                fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 color: kWhite))))
       ])

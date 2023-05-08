@@ -1,4 +1,5 @@
 import 'package:fitules/core/constants/color_constants.dart';
+import 'package:fitules/core/themes/app_style.dart';
 import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
 import 'package:fitules/core/utils/size_config/size_config.dart';
@@ -38,7 +39,9 @@ class OnboardingScreenState extends State<OnboardingScreens> {
   Widget build(BuildContext context) {
     SizeConfig.init(context);
     return Scaffold(
-
+      backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
+          ? backgroundBlack
+          : backgroundColor,
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         height: MediaQuery.of(context).size.height,
@@ -77,7 +80,7 @@ class OnboardingScreenState extends State<OnboardingScreens> {
                         Text(
                           onBoard.onBoardingProvContents[currentIndex].title,
                           textAlign: TextAlign.center,
-                          style:Theme.of(context).textTheme.titleLarge,
+                          style:AppStyle.title.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
                         ).addHeight(20.h),
 
                         Padding(
@@ -87,7 +90,8 @@ class OnboardingScreenState extends State<OnboardingScreens> {
                                 onBoard
                                     .onBoardingProvContents[currentIndex].description,
                                 textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.titleMedium)),
+                                style: AppStyle.title.copyWith(fontSize: 15,
+                                    fontWeight: FontWeight.w400))).addHeight(60.h),
 
 
 
