@@ -1,4 +1,4 @@
-import 'package:fitules/core/constants/color_constants.dart';
+
 import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:fitules/presentation/pages/nutrient/diet_categories.dart';
 import 'package:fitules/presentation/widgets/daily_nutrient_container.dart';

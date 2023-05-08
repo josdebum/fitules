@@ -14,7 +14,7 @@ class AppTheme {
    // The background color for major parts of the app (toolbars, tab bars, etc)
     const Color primaryColor = backgroundColor;
     const Color secondaryColor = kBlack;
-    final ColorScheme colorScheme =  ColorScheme.light().copyWith(
+    final ColorScheme colorScheme =  const ColorScheme.light().copyWith(
         shadow: Colors.transparent,
         primary: kPrimary,
         secondary: primaryColor,
@@ -29,7 +29,7 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         elevation: 0,
         color: primaryColor,
-        iconTheme:  IconThemeData(color: secondaryColor),
+        iconTheme:  const IconThemeData(color: secondaryColor),
         titleTextStyle: AppStyle.subtitle.copyWith(
           fontFamily: fontFamily,
           color: secondaryColor,

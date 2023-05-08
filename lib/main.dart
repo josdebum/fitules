@@ -2,7 +2,6 @@ import 'package:fitules/core/provider.dart';
 import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/presentation/pages/get_started/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'color_scheme.dart';
