@@ -34,8 +34,8 @@ class SignUpScreenState extends State<SignUpScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal:4),
             child:RichText(
-              text: const TextSpan(
-                style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.w400),
+              text: const  TextSpan(
+                style: TextStyle( fontSize: 12, fontWeight: FontWeight.w400),
                 children: <TextSpan>[
                   TextSpan(text: "By continuing, you agree to our ",
                   ),
@@ -55,7 +55,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                   onTap: (){Navigator.push(
                       context, MaterialPageRoute(builder: (context) =>
                   const SignUp2Screen()));},
-                  hasBorder: false).addHeight(40.h),
+                  hasBorder: false).addHeight(20.h),
               Padding(padding:
               const EdgeInsets.symmetric(horizontal: 4), child:
               Row(children: <Widget>[
@@ -70,7 +70,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                     flex: 1,
                     fit: FlexFit.tight,
                     child: Container(color: kBlack, height: 1)),
-              ])).addHeight(60.h),
+              ])).addHeight(40.h),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[

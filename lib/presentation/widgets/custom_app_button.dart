@@ -1,10 +1,10 @@
 
 
+import 'package:fitules/core/constants/color_constants.dart';
 import 'package:fitules/core/utils/size_config/extensions.dart';
-import 'package:fitules/core/utils/widget_extension.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/constants/color_constants.dart';
+
 
 class AppButton extends StatelessWidget {
   final void Function()? onTap;

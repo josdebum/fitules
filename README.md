@@ -11,6 +11,7 @@ Design Implementation from <a href="https://www.figma.com/file/ybbK8hHQlOdi9Zicy
 - CI/CD git action and code magic
 - Flutter Testing(widget and unit)
 - MVVM file structure
+- Local Notification
 - Provider state management
 - Responsive UI, etc.
 

@@ -1,3 +1,4 @@
+import 'package:fitules/core/constants/color_constants.dart';
 import 'package:fitules/core/themes/app_style.dart';
 import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
@@ -5,11 +6,10 @@ import 'package:fitules/local_notice_service.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/constants/color_constants.dart';
+
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

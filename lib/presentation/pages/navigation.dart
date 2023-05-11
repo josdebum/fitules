@@ -1,5 +1,4 @@
 import 'package:fitules/core/constants/color_constants.dart';
-import 'package:fitules/presentation/pages/community/community.dart';
 import 'package:fitules/presentation/pages/home/home.dart';
 import 'package:fitules/presentation/pages/nutrient/nutrients.dart';
 import 'package:fitules/presentation/pages/profile/profile.dart';

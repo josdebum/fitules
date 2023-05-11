@@ -72,7 +72,7 @@ class OnboardingScreenState extends State<OnboardingScreens> {
                       Provider.of<ThemeNotifier>(context, listen: false)
                           .toggleTheme();
                     },
-                  ).scale(scale: 0.8, alignment: const Alignment(0.0, 0.0)),
+                  ).scale(scale: 0.8, alignment: const Alignment(0.0, 0.0)).addHeight(40.h),
                      Image.asset(
                               onBoard.onBoardingProvContents[currentIndex]
                                   .imgString,

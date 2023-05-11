@@ -47,7 +47,7 @@ class SignUp2ScreenState extends State<SignUp2Screen> {
         appBar: FituleAppBar(
           title: 'Sign Up',
         ),
-        body:  Padding(
+        body:  SingleChildScrollView(child:Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +56,7 @@ class SignUp2ScreenState extends State<SignUp2Screen> {
              Center(child: Expanded(
                   child: Container(
                 height: 60.h,
-                alignment: Alignment.topCenter,
+                alignment: Alignment.topLeft,
                 child: Timeline.tileBuilder(
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
@@ -69,7 +69,7 @@ class SignUp2ScreenState extends State<SignUp2Screen> {
                     connectionDirection: ConnectionDirection.before,
                     itemCount: 3,
                     itemExtentBuilder: (_, __) {
-                      return 120;
+                      return 110;
                     },
                     oppositeContentsBuilder: (context, index) {
                       return Container();
@@ -151,7 +151,7 @@ class SignUp2ScreenState extends State<SignUp2Screen> {
                     );}
               ),
               ),
-            ])));
+            ]))));
   }
 
 
@@ -191,13 +191,13 @@ Widget getHWA() {
 }
 
 Widget getCountry(){
-  return Column(children: <Widget>[
+  return SingleChildScrollView(child: Column(children: <Widget>[
 
     const Text("Kindly choose your country for nutritional recommendation."),
-     AppTextField(title: "", prefixIcon: SvgPicture.asset("assets/svgs/flag.svg"),
+     AppTextField(title: "", keyboardType: TextInputType.number, prefixIcon: SvgPicture.asset("assets/svgs/flag.svg"),
        suffixIcon: const Icon(Icons.arrow_drop_down_sharp,)).addHeight(20.h),
 
 
 
-  ]);
+  ]));
 }
