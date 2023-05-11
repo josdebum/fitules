@@ -1,12 +1,16 @@
 import 'package:fitules/core/provider.dart';
 import 'package:fitules/core/themes/theme_notifier.dart';
+import 'package:fitules/local_notice_service.dart';
 import 'package:fitules/presentation/pages/get_started/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'color_scheme.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await LocalNoticeService().setup();
   runApp(const MyApp());
 }
 

@@ -73,14 +73,13 @@ class AppButton extends StatelessWidget {
                     fontSize: fontSize
                 ),
               ),
-                loadingIcon != null? Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
-                    child: const CircularProgressIndicator(color: kWhite).visible(loadingIcon!)) : const SizedBox(width: 0),
+                // loadingIcon != null? Padding(
+                //     padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
+                //     child: const CircularProgressIndicator(color: kWhite).visible(loadingIcon!)) : const SizedBox(width: 0),
 
               ])
             ),
-         //   if (loadingIcon != null) SizedBox(width: 12.w,),
-            //const CircularProgressIndicator(color: kWhite).visible(loadingIcon!) ?? Container(),
+
           ],
         )
       ),

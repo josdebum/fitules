@@ -1,9 +1,11 @@
 import 'package:fitules/core/themes/app_style.dart';
 import 'package:fitules/core/themes/theme_notifier.dart';
 import 'package:fitules/core/utils/widget_extension.dart';
+import 'package:fitules/local_notice_service.dart';
 import 'package:fitules/presentation/widgets/custom_app_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
@@ -17,8 +19,12 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class ProfileScreenState extends State<ProfileScreen> {
+
+
   @override
   Widget build(BuildContext context) {
+    final Color iconColor =  Provider.of<ThemeNotifier>(context).darkTheme? kGrey3: kBlack ;
+    int endTime = DateTime.now().millisecondsSinceEpoch ;
     return Scaffold(
         backgroundColor: Provider.of<ThemeNotifier>(context).darkTheme
             ? backgroundBlack
@@ -90,65 +96,47 @@ class ProfileScreenState extends State<ProfileScreen> {
                                         contentPadding: EdgeInsets.zero,
                                         visualDensity: const VisualDensity(
                                             horizontal: -4, vertical: -4),
-                                        leading: SvgPicture.asset(
-                                            "assets/svgs/profile.svg"),
+                                        leading:SvgPicture.asset(
+                                            "assets/svgs/profile.svg", width: 20, height: 20, ),
                                         title: const Text("Account"),
                                         trailing: SvgPicture.asset(
-                                            "assets/svgs/icon_arrow.svg")),
+                                            "assets/svgs/icon_arrow.svg", color: iconColor)),
                                     ListTile(
                                         contentPadding: EdgeInsets.zero,
                                         visualDensity: const VisualDensity(
-                                            horizontal: 0, vertical: -4),
+                                            horizontal: -4, vertical: -4),
                                         leading: SvgPicture.asset(
-                                            "assets/svgs/goal_setting.svg"),
+                                            "assets/svgs/goal_setting.svg", width: 10, height: 20, ),
                                         title: const Text("Goal Settings"),
                                         trailing: SvgPicture.asset(
-                                            "assets/svgs/icon_arrow.svg")),
+                                            "assets/svgs/icon_arrow.svg", color: iconColor)),
                                     ListTile(
+                                      onTap: (){LocalNoticeService().addNotification(
+                                        'Health tips: Water reminder',
+                                        "Take water to stay healthier",
+                                        endTime,
+                                        sound: 'workend.mp3', //Add this
+                                        channel: 'work-end',
+                                      );},
                                         contentPadding: EdgeInsets.zero,
                                         visualDensity: const VisualDensity(
-                                            horizontal: 0, vertical: -4),
-                                        leading: SvgPicture.asset(
-                                            "assets/svgs/notification.svg"),
+                                            horizontal: -4, vertical: -4),
+                                        leading:  SvgPicture.asset(
+                                            "assets/svgs/notification.svg", width: 20, height: 20, ),
                                         title: const Text("Notification"),
                                         trailing: SvgPicture.asset(
-                                            "assets/svgs/icon_arrow.svg")),
+                                            "assets/svgs/icon_arrow.svg",  color: iconColor)),
+
                                     ListTile(
                                         contentPadding: EdgeInsets.zero,
                                         visualDensity: const VisualDensity(
-                                            horizontal: 0, vertical: -4),
-                                        leading: SvgPicture.asset(
-                                            "assets/svgs/tracking.svg"),
-                                        title: const Text("Tracking"),
-                                        trailing: SvgPicture.asset(
-                                            "assets/svgs/icon_arrow.svg")),
-                                    ListTile(
-                                        contentPadding: EdgeInsets.zero,
-                                        visualDensity: const VisualDensity(
-                                            horizontal: 0, vertical: -4),
-                                        leading: SvgPicture.asset(
-                                            "assets/svgs/help.svg"),
-                                        title: const Text("Help"),
-                                        trailing: SvgPicture.asset(
-                                            "assets/svgs/icon_arrow.svg")),
-                                    ListTile(
-                                        contentPadding: EdgeInsets.zero,
-                                        visualDensity: const VisualDensity(
-                                            horizontal: 0, vertical: -4),
+                                            horizontal: -4, vertical: -4),
                                         leading: SvgPicture.asset(
                                             "assets/svgs/nut_setting.svg"),
                                         title: const Text("Nutrition Settings"),
                                         trailing: SvgPicture.asset(
-                                            "assets/svgs/icon_arrow.svg")),
-                                    ListTile(
-                                        contentPadding: EdgeInsets.zero,
-                                        visualDensity: const VisualDensity(
-                                            horizontal: 0, vertical: -4),
-                                        leading: SvgPicture.asset(
-                                            "assets/svgs/chat_room.svg"),
-                                        title: const Text("Chatroom Settings"),
-                                        trailing: SvgPicture.asset(
-                                            "assets/svgs/icon_arrow.svg"))
+                                            "assets/svgs/icon_arrow.svg", color:iconColor)),
+
                                   ])))
                         ])))));
   }

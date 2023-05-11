@@ -26,7 +26,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
         children: const [
            HomeScreen(),
            WorkoutScreen(),
-           CommunityScreen(),
+          // CommunityScreen(),
            NutrientScreen(),
            ProfileScreen(),
         ],
@@ -66,15 +66,15 @@ class _NavigationWidgetState extends State<NavigationWidget> {
             ),
             label: "Workout",
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-                "assets/svgs/community.svg",
-                width: 21,
-                height: 21,
-                color:kPrimary
-            ),
-            label: "Community",
-          ),
+          // BottomNavigationBarItem(
+          //   icon: SvgPicture.asset(
+          //       "assets/svgs/community.svg",
+          //       width: 21,
+          //       height: 21,
+          //       color:kPrimary
+          //   ),
+          //   label: "Community",
+          // ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
                 "assets/svgs/nutrients.svg",
